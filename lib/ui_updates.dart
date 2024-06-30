@@ -5,6 +5,12 @@ import "package:flutter/material.dart";
 class UiUpdates extends StatefulWidget {
   const UiUpdates({super.key});
 
+   @override
+  StatefulElement createElement() {
+    print('UIUpdatesDemo CREATEELEMENT called');
+    return super.createElement();
+  }
+
   @override
   State<UiUpdates> createState() => _UiUpdatesState();
 }
@@ -45,7 +51,9 @@ class _UiUpdatesState extends State<UiUpdates> {
                 ),
                 TextButton(
                   onPressed: () {
-                    _isUnderstood = false;
+                    setState(() {
+                      _isUnderstood = false;
+                    });
                   },
                   child: const Text('No'),
                 ),
