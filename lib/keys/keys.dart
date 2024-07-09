@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_internals/keys/todoitem.dart';
 
 class Todo {
   Todo(this.text, this.priority);
@@ -42,7 +43,7 @@ class _KeysState extends State<Keys> {
     return Column(
       children: [
         Align(
-          alignment: Alignment.center,
+          alignment: Alignment.centerRight,
           child: TextButton.icon(
             onPressed: _changeOrder,
             icon: Icon(
