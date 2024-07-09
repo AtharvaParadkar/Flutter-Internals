@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_internals/keys/todoitem.dart';
+import 'package:flutter_internals/keys/checkable_todo_item.dart';
+// import 'package:flutter_internals/keys/todoitem.dart';
 
 class Todo {
   Todo(this.text, this.priority);
@@ -56,7 +57,11 @@ class _KeysState extends State<Keys> {
           child: Column(
             children: [
               for (final todo in _orderedTodos)
-                TodoItem(
+                CheckableTodoItem(
+                  //~ Value key manages t only one value
+                  // key: ValueKey(todo.text),
+                  //~ ObjectKey manages the entire object
+                  key: ObjectKey(todo),
                   todo.text,
                   todo.priority,
                 ),
